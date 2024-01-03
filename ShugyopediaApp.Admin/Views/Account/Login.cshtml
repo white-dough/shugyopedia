@@ -44,7 +44,7 @@
                 </button>
             </div>
             <div class="forgot-user">
-                <a asp-action="Forgot" asp-controller="Account">@ForgotPass</a>
+                <a asp-action="ForgotPassword" asp-controller="Account">@ForgotPass</a>
             </div>
         </form>
     </div>
@@ -53,7 +53,12 @@
 @section scripts {
     <script>
         // Check for error message and display Toastr notification
+        var successMessage = '@TempData["SuccessMessage"]';
         var errorMessage = '@TempData["ErrorMessage"]';
+        if(successMessage) {
+            toastr.success(successMessage);
+        }
+        
         if (errorMessage) {
             toastr.error(errorMessage);
         }

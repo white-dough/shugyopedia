@@ -57,6 +57,7 @@ ViewModel - define viewmodel
 Add service and repo to startup DI
 
 
+
 ---GIT commands---
 git branch branchname =====> Creates a new branch
 git checkout branchname =====> Change current branch
