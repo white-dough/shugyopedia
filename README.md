@@ -1,33 +1,55 @@
-# C# BaseCode
-## _ASI Bridge/JumpStart Program BaseCode_
+# Shugyopedia: Knowledge Site Web Application <br>
+### Offers wide-array of knowledge and training powered by AI.<br>
 
-This is the base code that will be used during the bridge and jumpstart program.
-```
-```
-## Installation
-1.  Open the `.sln` file.
-    _※Use Visual Studio 2022_
-2.  Change connection strings on the `appsettings.json` base on your server
-3.  Set `ASI.Basecode.WebApp` as the Startup project.
-4.  Clean and ReBuild the solution.
+Welcome to ShugyoPedia, your go-to web platform for comprehensive knowledge and diverse training courses across various fields. Here, you'll not only explore but also expand your skills and knowledge base. Engage with ShugyoBot AI, our chatbot companion designed to assist and guide learners throughout their educational journey, empowering them to achieve their learning goals with ease.<br><br>
 
-## Code Structure
+## Training Categories -> Trainings -> Topics -> Resources
+![Bisdakids Main Menu](Categories.jpg)
+The web application stands out with its exceptional hierarchy—Training Categories -> Trainings -> Topics -> Resources. This organized structure ensures effortless navigation, allowing users to seamlessly explore various sections and functionalities.<br>
 
-- `ASI.Basecode.Data`
-    - This project contains the repositories and other logics that involves with database.
-    - Make sure that the repository is for db processing only.
-    - If it involves additional logic, move the logic into the service file.
-- `ASI.Basecode.Resources`
-    - This project is dedicated to storing messages, labels, and other resources used by the website.
-    - It serves as a centralized location for managing static content that is displayed to users.
-    - Store all messages, labels, translations, and any non-code assets required for the site in this project.
-- `ASI.Basecode.Services`
-    - This project contains the services and other processing logics before connecting to the repository.
-    - This can also contains classes that can be use by the WebApp project with/without db processing.
-- `ASI.Basecode.WebApp`
-    - This project contains the main codes especially the `Controllers` and `Views`.
-    - This is where you put the connection logic to the APIs.
-    - Make sure that the controllers are clean and no other logic should involve.
-    - If it involves additional logic, move the logic into the service file.
-```
-```
+## Diverse Trainings
+![Bisdakids Main Menu](Trainings.jpg)
+Choose from a multitude of training programs within your selected category, offering a wide array of learning opportunities.<br>
+## Feedback System
+![Bisdakids Main Menu](Feedback.jpg)
+Engage with our feedback system! Rate and share insights on specific trainings, shaping an interactive learning community.<br>
+
+## Admin Monitoring and Control System
+![Bisdakids Main Menu](Admin.jpg)
+The web app includes an admin interface for monitoring and managing aspects of the application, ensuring a smooth operational experience.<br>
+
+## Technology Stack
+* Web Development Framework
+  * ASP.NET CORE
+  * .NET FRAMEWORK
+* OpenAI
+    * GPT-3.5 Turbo
+* Programming Language and Markups
+  * C#
+  * JavaScript
+  * HTML
+  * CSS
+* Database (Locally-hosted)
+  * MSSQL
+* API
+  * OpenAI's API (implemented using JavaScript)
+* Documentation and Project Management
+  * Powerpoint
+  * Excel
+  * Trello
+  * Discord
+  * Messenger <br><br><br>
+
+## OUR TEAM
+Chloie Marco Quitco - Project Manager<br>
+
+Charles Cordova - Full-Stack Web Developer, Frontend Engineer, Software Developer<br>
+
+Dwight Eyac - Technical Manager, Backend Engineer, Database Admin, AI Application Developer<br>
+
+Moses Anthony Fat - Full-Stack Web Developer, Frontend Engineer, Software Developer<br>
+
+Harley Davidson Saring - Full-Stack Developer, Lead Frontend Engineer, Software Developer<br>
+
+## 
+© All Rights Reserved 2023 - Group 3 UCMAIN
