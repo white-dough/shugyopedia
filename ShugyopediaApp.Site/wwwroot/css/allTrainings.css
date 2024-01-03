@@ -1,0 +1,89 @@
+﻿.main {
+    padding: 20px;
+    margin-left: 300px;
+}
+.imgtop {
+position:absolute;
+z-index:1;
+align-content:center;
+align-items:center;
+text-align:center;
+float:right;
+margin-top:5%;
+}
+
+.main-con {
+    background-image: url("/img/bg-shape.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*.allTrainings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top:150px;
+    height: auto;
+    width: 100%;
+}*/
+
+/* SEARCH FORM */
+
+.search-container {
+    display: flex;
+}
+
+.search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 210px;
+    outline: none;
+}
+
+.search-button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    outline: none;
+}
+
+.topic-img-container {
+    border: 2px solid black;
+}
+
+.topic-img {
+    width: 200px;
+    height: 150px;
+}
+
+.pos-img {
+    position: absolute;
+    top: -5px;
+    right: 1px;
+}
+
+.cut-text {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.cut-text-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: 2;
+}
+
+.learn-btn {
+    background-color: #2F3CED;
+    position: absolute;
+    bottom: 30px;
+}

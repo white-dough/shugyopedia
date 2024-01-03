@@ -1,0 +1,53 @@
+﻿@using static ShugyopediaApp.Resources.Views.Screen
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <link href="~/img/shugyopedia_logo.png" rel="icon">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/admin.css" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/homepage.css" />
+    <link rel="stylesheet" href="~/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    @if (!(Context.Request.Path.StartsWithSegments("/") || Context.Request.Path.StartsWithSegments("/Account/Login")  || Context.Request.Path.StartsWithSegments("/Account/ForgotPassword") || Context.Request.Path.StartsWithSegments("/Account/ResetPassword")))
+    {
+        @Html.Partial("_Header")
+    }
+
+    @RenderBody()
+
+    <script src="~/js/topnavbar.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>
+    <script src="https://kit.fontawesome.com/7a7c645416.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/js/jquery.dataTables.js"></script>
+    <script src="~/js/admin.js" asp-append-version="true"></script>
+    <script>
+        // Configure Toastr options
+        toastr.options = {
+            positionClass: "toast-top-center", // Set the notification position to center
+            timeOut: 3000,
+            closeButton: true,
+            progressBar: true
+        };
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

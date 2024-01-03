@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+@functions {
+    // Helper function to determine if a given controller is active
+    private string IsActive(string controller)
+    {
+        var currentController = ViewContext.RouteData.Values["controller"] as string;
+        return (currentController == controller) ? "active" : string.Empty;
+    }
+}
+
+<header class="fixed-top" style="background-color: #2F3CED; color: white;">
+    <div class="navbar">
+        <div class="logo">
+            <img src="~/img/logo_with_text_light.png" />
+        </div>
+        <div class="right d-flex align-items-center me-5">
+            <ul>
+                <li class="nav-item dropdown" style="list-style: none;">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="~/img/defaultimage.jpg" class="rounded-circle" width="40"> Username
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-action="" asp-controller=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar2">
+        <a class="link @(IsActive("TrainingCategory"))" asp-action="Index" asp-controller="TrainingCategory">Training Categories</a>
+        <a class="link @(IsActive("Training"))" asp-action="Index" asp-controller="Training">Training</a>
+        <a class="link @(IsActive("Rating"))" asp-action="Index" asp-controller="Rating">Ratings</a>
+        <a class="link @(IsActive("Topic"))" asp-action="Index" asp-controller="Topic">Topics</a>
+        <a class="link @(IsActive("User"))" asp-action="Index" asp-controller="User">Users</a>
+        <a class="link @(IsActive("RecoveryRequest"))" asp-action="Index" asp-controller="RecoveryRequest">Account Recovery Requests</a>
+   </div>
+</header>

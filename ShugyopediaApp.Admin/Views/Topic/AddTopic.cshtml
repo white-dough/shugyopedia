@@ -1,0 +1,54 @@
+﻿@{
+	ViewData["Title"] = "Add Topic";
+}
+@model ShugyopediaApp.Services.ServiceModels.AddTopicViewModel
+<main>
+    <div class="container my-4">
+        <h1 class="text-center">Add Topic</h1>
+        <div class="row justify-content-center my-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-controller="Topic" asp-action="AddTopic" enctype="multipart/form-data" method="POST">
+                            <div class="form-group my-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="training_name">Training Name</label>
+                                        <select asp-for="TrainingId" class="form-select">
+                                            <option selected disabled>Select Training</option>
+                                            @foreach (var training in Model.Trainings)
+                                            {
+                                                <option value="@training.TrainingId">@training.TrainingName</option>
+                                            }
+                                        </select>
+                                        <span asp-validation-for="TrainingId" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="TopicName">Topic Name</label>
+                                        <input type="text" asp-for="TopicName" class="form-control" placeholder="Enter topic name">
+                                        <span asp-validation-for="TopicName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4 class="text-center">Add Resource</h4>
+                            <div class="form-group my-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="ResourceFileUpload">Resource File</label>
+                                        <input type="file" asp-for="ResourceFileUpload" accept=".mp4,.pdf" required>
+                                        <span asp-validation-for="ResourceFileUpload" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center mt-5">
+                                <button type="reset" class="btn btn-primary mx-5">Clear</button>
+                                <button type="submit" class="btn btn-success mx-5">Add Topic</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

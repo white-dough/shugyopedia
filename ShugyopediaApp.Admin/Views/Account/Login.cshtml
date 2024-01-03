@@ -1,0 +1,66 @@
+﻿@model LoginViewModel
+@using static ShugyopediaApp.Resources.Views.Screen
+@section styles {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+@{
+    ViewBag.LoginView = true;
+    ViewData["Title"] = "Login Page";
+}
+
+@* <div>
+    @Html.AntiForgeryToken()
+</div>
+*@
+
+<div class="top-container">
+    <div class="left">
+        <img src="~/img/logo_with_text_dark.png" width="350"/>
+    </div>
+    <div class="right">
+        
+    </div>
+</div>
+<div class="container">
+    <div class="left-welcome">
+        <h1>Welcome</h1>
+        <p>Shugyopedia Knowledge <br> App</p>
+    </div>
+    <div class="right-login">
+        <form method="post">
+            <div class="user-input">
+                <label for="form2Example11">@UserId</label><br>
+                <input type="text" id="form2Example11" asp-for="UserId" placeholder="Enter userid" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="password-input">
+                <label for="form2Example22">@Password</label><br>
+                <input type="password" id="form2Example22" asp-for="Password" placeholder="Enter password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div><br>
+            <div class="submit-btn">
+                <button type="submit">
+                    @Login
+                </button>
+            </div>
+            <div class="forgot-user">
+                <a asp-action="ForgotPassword" asp-controller="Account">@ForgotPass</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        // Check for error message and display Toastr notification
+        var successMessage = '@TempData["SuccessMessage"]';
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if(successMessage) {
+            toastr.success(successMessage);
+        }
+        
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+}
